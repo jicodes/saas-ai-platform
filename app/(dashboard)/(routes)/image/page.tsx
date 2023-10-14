@@ -14,6 +14,7 @@ import { Loader } from "@/components/loader";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Card, CardFooter } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -23,8 +24,7 @@ import {
 } from "@/components/ui/select";
 
 import { amoutOptions, formSchema, resolutionOptions } from "./constants";
-import { cn } from "@/lib/utils";
-import { Card, CardFooter } from "@/components/ui/card";
+
 import Image from "next/image";
 
 const ImagePage = () => {
