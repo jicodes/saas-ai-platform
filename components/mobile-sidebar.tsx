@@ -1,10 +1,14 @@
+"use client";
+
 import { Menu } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import Sidebar from "@/components/sidebar";
-import { getApiLimitCount } from "@/lib/api-limit";
 
-const MobileSidebar = async () => {
-  const apiLimitCount = await getApiLimitCount();
+interface MobileSidebarProps {
+  apiLimitCount: number;
+}
+
+const MobileSidebar = ({ apiLimitCount }: MobileSidebarProps) => {
   return (
     <Sheet>
       <SheetTrigger>
