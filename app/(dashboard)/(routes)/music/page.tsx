@@ -70,7 +70,7 @@ const MusicPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="ex. a music track with a piano and a violin"
+                        placeholder="ex. A music track with a piano and a violin"
                         {...field}
                       ></Input>
                     </FormControl>
