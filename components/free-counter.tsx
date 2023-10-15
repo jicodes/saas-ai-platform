@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { MAX_FREE_COUNTS } from "@/constants";
 import { Progress } from "@/components/ui/progress";
@@ -9,6 +11,9 @@ interface FreeCounterProps {
 }
 
 export const FreeCounter = ({ apiLimitCount = 0 }: FreeCounterProps) => {
+  // TODO: trick to prevent hydration errors
+  //
+
   return (
     <div className="px-3">
       <Card className="bg-white/10 border-0">
