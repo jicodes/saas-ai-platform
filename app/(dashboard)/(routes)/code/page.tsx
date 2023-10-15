@@ -15,14 +15,17 @@ import { Loader } from "@/components/loader";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
-import { formSchema } from "./constants";
-import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
+
+import { useProModal } from "@/hooks/use-pro-modal";
+import { cn } from "@/lib/utils";
+
+import { formSchema } from "./constants";
 import ReactMarkdown from "react-markdown";
 
 const CodePage = () => {
+  const proModal = useProModal();
   const router = useRouter();
 
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]);
@@ -49,8 +52,9 @@ const CodePage = () => {
       setMessages([...messages, userMessage, response.data]);
       form.reset();
     } catch (error: any) {
-      // TODO: Open Pro Modal
-      console.log(error);
+      if (error?.response?.status === 403) {
+        proModal.onOpen();
+      }
     } finally {
       router.refresh();
     }
@@ -127,7 +131,10 @@ const CodePage = () => {
                       </div>
                     ),
                     code: ({ node, ...props }) => (
-                      <code className="bg-black/10 rounded-lg p-1 font-bold" {...props} />
+                      <code
+                        className="bg-black/10 rounded-lg p-1 font-bold"
+                        {...props}
+                      />
                     ),
                   }}
                   className="text-sm overflow-hidden leading-7"

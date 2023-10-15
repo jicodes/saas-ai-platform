@@ -5,15 +5,16 @@ import { MAX_FREE_COUNTS } from "@/constants";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useProModal } from "@/hooks/use-pro-modal";
 
 interface FreeCounterProps {
   apiLimitCount: number;
 }
 
 export const FreeCounter = ({ apiLimitCount = 0 }: FreeCounterProps) => {
-  // TODO: trick to prevent hydration errors
-  //
-
+  const proModal = useProModal();
+  //TODO: trick to prevent hydration errors
   return (
     <div className="px-3">
       <Card className="bg-white/10 border-0">
@@ -27,7 +28,7 @@ export const FreeCounter = ({ apiLimitCount = 0 }: FreeCounterProps) => {
               value={(apiLimitCount / MAX_FREE_COUNTS) * 100}
             ></Progress>
           </div>
-          <Button className="w-full" variant="premium">
+          <Button onClick={proModal.onOpen} className="w-full" variant="premium">
             Upgrade
             <Zap className="w-4 h-4 ml-2 fill-white" />
           </Button>
