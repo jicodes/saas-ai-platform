@@ -42,7 +42,7 @@ export async function GET() {
           price_data: {
             currency: "USD",
             product_data: {
-              name: "Jarvis Pro Subscription",
+              name: "Jarvis AI Pro",
               description: "Unlimited AI Generations",
             },
             unit_amount: 2000,
@@ -59,11 +59,8 @@ export async function GET() {
     });
 
     return new NextResponse(JSON.stringify({ url: stripeSession.url }));
-
   } catch (error) {
     console.log("[STRIPE_ERROR]: ", error);
     return new NextResponse("Internal Error", { status: 500 });
-  } finally {
-    await prismadb.$disconnect();
   }
 }
