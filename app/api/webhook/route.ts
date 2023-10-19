@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       session.subscription as string
     );
 
-    await prismadb.userSubscription.update({
+    await prismadb.userSubscription.updateMany({
       where: {
         stripeSubscriptionId: subscription.id,
       },
@@ -59,7 +59,6 @@ export async function POST(req: Request) {
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000
         ),
-        
       },
     });
   }
