@@ -108,6 +108,7 @@ export const ProModal = () => {
         </DialogHeader>
         <DialogFooter className="flex justify-center items-center flex-col gap-y-4 pt-4">
           <Button
+            disabled={loading}
             onClick={onSubscribe}
             variant="premium"
             size="lg"
