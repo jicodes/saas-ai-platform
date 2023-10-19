@@ -81,7 +81,7 @@ const Sidebar = ({ apiLimitCount = 0, isPro = false }: SidebarProps) => {
             <Image src="/logo.png" alt="logo" fill />
           </div>
           <h1 className={cn("text-2xl font-bold", montserrat.className)}>
-            Jarvis
+            Jarvis AI
           </h1>
         </Link>
         <div className="space-y-1">
