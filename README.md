@@ -6,4 +6,7 @@ AI generation capabilities are provided by [OpenAI's API](https://openai.com/blo
 
 The project is hosted on [Vercel](https://jarvis-a-i.vercel.app/).
 
+<img src="public/landing.png" width="550" height="700">
+<img src="public/code.png" width="550" height="700">
+
 Kudos to [Antonio](https://www.codewithantonio.com/mentorship) for his invaluable tutorials, which played a crucial role in making this project possible.
