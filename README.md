@@ -6,6 +6,9 @@ AI generation capabilities are provided by [OpenAI's API](https://openai.com/blo
 
 The project is hosted on [Vercel](https://jarvis-a-i.vercel.app/).
 
+After changing the provider in the Prisma schema, run
+`npx prisma generate` to update Prisma Client code, and `npx prisma migrate dev --preview-feature` to update database schema.
+
 <img src="public/landing.png" width="550" height="700">
 <img src="public/code.png" width="550" height="700">
 
